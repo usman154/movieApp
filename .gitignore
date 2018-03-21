@@ -1,0 +1,15 @@
+
+/.vscode/**
+node_modules/
+bower_components/
+coverage/
+.sass-cache/
+.idea/
+.tmp/
+.tmp/*
+dist/*
+e2e/*
+dist/
+e2e/
+*/.DS_Store
+
