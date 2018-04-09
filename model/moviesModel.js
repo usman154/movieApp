@@ -9,10 +9,6 @@ var moviesModel = new Schema({
     relasedDate : {
         type : Date,
         default: Date.now
-    },
-    rating : {
-        type : Number,
-        required : true
-    }
+    } 
 })
 module.exports = mongoose.model('Movie', moviesModel)

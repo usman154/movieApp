@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Movie App</title>
+    <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body ng-app="movieApp" ng-controller="movieAppController" ng-cloak>
+    <div class="main">
+	    <div id="form">
+	       <input type="text" ng-model="movieName" id="ele" class="item" />
+	       <button class="item btn-class" ng-click="addMovieInList()" >Add Movie</button>
+	   </div>
+	   <div id="list-and-actions" class="list">
+	     
+			<ol class="list-numbered">
+				<li ng-repeat="movie in movies"><a href="#" ng-click="deleteMovie($event, movie._id)">{{movie.name}}</a></li>
+			</ol>
+		 
+	   </div>
+	</div>
+  </body>
+</html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
+ 
+<script src="content/js/script.js"></script>

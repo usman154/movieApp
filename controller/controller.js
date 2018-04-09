@@ -16,6 +16,7 @@ exports.list_all_movies = function(req, res) {
 
 
 exports.create_a_movie = function(req, res) {
+  console.log(req.body)
   var new_movie = new Movie(req.body);
   new_movie.save(function(err, movie) {
     if (err)
@@ -44,8 +45,7 @@ exports.updateMovie = function(req, res) {
 
 
 exports.deleteMovie = function(req, res) {
-
-
+ 
   Movie.remove({
     _id: req.params.movieId
   }, function(err, movie) {
