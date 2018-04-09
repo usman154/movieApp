@@ -17,6 +17,7 @@ app.use(function(req, res, next) {
   });
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(express.static(__dirname+"/frontend"));
 var routes = require('./routes/routes');
 routes(app);
 app.listen(port)

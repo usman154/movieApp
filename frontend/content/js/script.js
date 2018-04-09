@@ -6,7 +6,7 @@ angular.module("movieApp", []).controller('movieAppController', function($scope,
 	   
 	   $http({
 		   method : "GET",
-		   url : "http://localhost:3000/movies"
+		   url : "/movies"
 	   }).then(function(response){
 		   $scope.movies = response.data;
 		   
@@ -16,10 +16,11 @@ angular.module("movieApp", []).controller('movieAppController', function($scope,
    $scope.addMovieInList = function(){
 		    $http({
 		     method : "POST",
-		     url : "http://localhost:3000/movies",
+		     url : "/movies",
 			 data : {name : $scope.movieName}
 	   }).then(function(response){
 		   $scope.movies.push(response.data);
+		   $scope.movieName = null;
 		   
 	   })
 		   
@@ -29,7 +30,7 @@ angular.module("movieApp", []).controller('movieAppController', function($scope,
 	      eve.preventDefault();
 	      $http({
 		     method : "DELETE",
-		     url : "http://localhost:3000/movie/"+id,
+		     url : "/movie/"+id,
 			 
 	   }).then(function(response){
 		  var indx = $scope.movies.findIndex(function(movie){
